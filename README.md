@@ -35,5 +35,6 @@ Next, duplication is removed to identify only those eligible retirees by their c
       ```
 And finally, a summary is generated using the above data to determine the number of eligible retirees by job title.
 
+<img src "images/retiring_titles_table.png" width="40%" height="20%">
 
 
