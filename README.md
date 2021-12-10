@@ -8,6 +8,7 @@ Pewlett-Hackard employees 240,124 staff in nine departments and seven different 
 
 ## Method of Analysis
 Two major data components are necessary to perform the analysis. The first data set identifies those who are eligible to retire within the next three years. The database query used to determine the potential retirees looked for all current employees who's birthdays fall between January 1, 1952 and December 31, 1955. This initial file was exported as retirement_titles.csv; however, there is duplication in this file that must be addressed. The query is provided for context:
+
       ```
       SELECT e.emp_no, 
         e.first_name, 
@@ -22,7 +23,9 @@ Two major data components are necessary to perform the analysis. The first data 
       WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
       ORDER BY e.emp_no;
       ```
+
 Next, duplication is removed to identify only those eligible retirees by their current title/ position. This list generated a unique list of eligibile employees, using the query below:
+
       ```
       SELECT DISTINCT ON (rt.emp_no)
         rt.emp_no, 
