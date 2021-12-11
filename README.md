@@ -103,7 +103,7 @@ Expanding the mentorship selection query to include those born in 1964 increases
 
 A query was built that shows the side-by-side comparison of retirement roles compared the expanded mentors (19,905 mentors) in those roles. The total retiring staff is heavy in both senior engineers and senior staff, and also reflects a considerable number of engineers not specified as "senior". Since senior level positions and engineers can be difficult to hire, Pewlett-Hackard may wish to consider using their retirement eligible pool to mentor those who will remain as future mentors for new employees.
 
-1. The query used to build the ditribution of mentors to retirees query shown above. The query for the expanded mentors is provided in the event it needs to be refined in the future:
+1. The query used to build the ditribution of mentors to retirees query shown below. The query for the expanded mentors is provided in the event it needs to be refined in the future:
 
             ```
             SELECT rt.title "Retiree Title", rt.count retirees,
