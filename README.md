@@ -87,26 +87,23 @@ Another concern arose when looking at expanding the mentorship pool to include e
 ## Summary of the Analysis
 Of the 240,124 employees, 90,398 distributed over seven different roles will need to be filled within the next three years. This number represents nearly 38% of the company's workforce. The total number of mentors as initially defined is 1,549 employees. The mentorships selected in the initial query is not sufficient to mentor the next generation of Pewlett-Hackard employees.
 
-Other questions from the queries include:
+Other questions from the queries and data include:
 
 - Senior Engineers are the largest potential retiree pool with over 29,000 employees, or nearly 30% of the retirement elegible employees.
       - How difficult will it be to find qualified engineers to fill these senior level retirees?
 
 - Senior Staff is the second largest potential retiree pool with over 28,000 employees, again representing nearly 30% of total retirement eligible employees.
 - Nearly 70% of all possible retirees are in senior positions.
-      - Should current eligible retirement staff be mentoring the "mentor staff" now to fill these senior level positions?
+      - Should current retirement eligible staff be mentoring the "mentor staff" now to fill these senior level positions?
 
 - Nearly 50% of all possible retirees are "senior engineers" or "engineers".
-      - How difficult will it be to find qualified engineers to fill these these roles?
+      - How difficult will it be to find qualified engineers to fill these roles?
 
-Expanding the mentorship selection query to include those born in 1964 increases the mentorship pool to 19,905 possible mentors, or 22% of the retirement pool. In addition, Pewlett-Hackard may want to seek out local or regional universities to recruit their pool of engineers. Engineers are highly sought after, and the analysis shows engineer positions make up a large portion of those riding the "silver tsunami". Due to the significant number of senior engineers anticipated to retire in the next three years, the company may also want to initiate a mentorship program with this group of retirees in order to build their next senior level engineers before they department the company.
+Expanding the mentorship selection query to include those born in 1964 increases the mentorship pool to 19,905 possible mentors, or 22% of the retirement pool. In addition, Pewlett-Hackard may want to seek out local or regional universities to recruit their pool of engineers. The analysis shows engineer positions make up a large portion of those riding the "silver tsunami". Due to the significant number of senior engineers anticipated to retire in the next three years, the company may also want to initiate a mentorship program with this group of retirees in order to build their next senior level engineers before they department the company.
 
-Below shows
+A query was built that shows the side-by-side comparison of retirement roles compared the expanded mentors (19,905 mentors) in those roles. The total retiring staff is heavy in both senior engineers and senior staff, and also reflects a considerable number of engineers not specified as "senior". Since senior level positions and engineers can be difficult to hire, Pewlett-Hackard may wish to consider using their retirement eligible pool to mentor those who will remain as future mentors for new employees.
 
-1. The percentage distribution of mentors to retirees after expanding the mentorship to include those born in 1964
-<img src = "images/percent_expanded_mentors_to_retirees.png" weight="40%" height="20%">
-
-2. The query used to build the ditribution of mentors to retirees query shown above. The query for the expanded mentors is provided in the event it needs to be refined in the future:
+1. The query used to build the ditribution of mentors to retirees query shown above. The query for the expanded mentors is provided in the event it needs to be refined in the future:
 
             ```
             SELECT rt.title "Retiree Title", rt.count retirees,
@@ -117,3 +114,5 @@ Below shows
             ON rt.title = mentor_title
             GROUP BY "Retiree Title", mentor_count, retirees;
             ```
+2. The percentage distribution of mentors to retirees after expanding the mentorship to include those born in 1964
+<img src = "images/percent_expanded_mentors_to_retirees.png" weight="40%" height="20%">
