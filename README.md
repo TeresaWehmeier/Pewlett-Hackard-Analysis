@@ -39,9 +39,29 @@ Next, duplication is removed to identify only those eligible retirees by their c
       FROM retirement_titles as rt
       ORDER BY rt.emp_no, rt.to_date DESC;
       ```
-And finally, a summary is generated using the above data to identify the number of eligible retirees by job title. There are 98,398 employees eligible to retire in the next three years. The image presents the data by title, sorted largest to smallest number of retirees.
+And finally, a summary is generated using the above data to identify the number of eligible retirees by job title. There are 90,398 employees eligible to retire in the next three years. The image presents the data by title, sorted largest to smallest number of retirees.
 
 <img src ="images/retiring_titles_table.png" width="40%" height="20%">
 
 ### Deliverable Two
-Next it is necessary to find those who are candidates for the mentorship program the company plans. These mentors will need to be sufficient in number to train future new employees hired to replace retirees. 
+Next it is necessary to find those who are candidates for the mentorship program the company plans. These mentors will need to be sufficient in number to train future new employees hired to replace retirees. Initially, the prospective mentorship list was filtered to include all employees by title whose birthdays fall between January 1 - December 31, 1965. The following query is provided in the event of future needed refinement:
+
+      ```
+      SELECT DISTINCT ON (e.emp_no) e.emp_no, 
+            e.first_name, 
+            e.last_name, 
+            e.birth_date,
+            de.from_date,
+            de.to_date,
+            t.title
+      INTO mentorship_eligibility
+      FROM employees as e
+      INNER JOIN dept_emp as de
+      ON e.emp_no = de.emp_no
+      INNER JOIN titles as t
+      ON e.emp_no = t.emp_no
+      WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+      AND t.to_date ='9999-01-01'
+      ORDER BY e.emp_no, t.to_date DESC;
+      ```
+
