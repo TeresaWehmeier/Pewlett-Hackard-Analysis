@@ -64,5 +64,8 @@ Next it is necessary to find those who are candidates for the mentorship program
       AND t.to_date ='9999-01-01'
       ORDER BY e.emp_no, t.to_date DESC;
       ```
-Using similar queries and processes to deliverable one, a mentorship list is defined, and summarized to show the distribution of mentors by job title. There are 1549 mentors returned in the query results; the resulting query is presented here:
+Using similar queries and processes to deliverable one, a mentorship list is defined, and summarized to show the distribution of mentors by job title. There are 1549 mentors returned in the query results and presented here:
 
+<img src = "images/mentor_summary_by_title.png" width="40%" height="20%">
+                                                                    
+## Summary of the Analysis
