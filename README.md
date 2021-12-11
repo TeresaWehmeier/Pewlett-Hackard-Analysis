@@ -103,7 +103,7 @@ Of the 240,124 employees, 90,398 distributed over seven different positions are 
 - Senior Staff is the second largest potential retiree pool with over 28,000 employees, again representing nearly 30% of total retirement eligible employees;
 - The mentor selection pool represents less than 2% (1549 mentors) of the total retirement eligible employees (90,398 possible retirees);
 - Nearly 70% of all possible retirees are in senior positions;
-- Nearly 50% of a possible retirees are "senior engineers" or "engineers";
+- Nearly 50% of all possible retirees are "senior engineers" or "engineers";
 
 Expanding the mentorship selection query to include those born in 1964 increases the mentorship pool to 19,905 possible mentors, or 22% of the retirement pool. In addition, Pewlett-Hackard may want to seek out local or regional universities to recruit their pool of engineers. Engineers are highly sought after, and the analysis shows engineer positions make up a large portion of those riding the "silver tsunami". Due to the significant number of senior engineers anticipated to retire in the next three years, the company may also want to initiate a mentorship program with this group of retirees in order to build their next senior level engineers before they department the company.
 
