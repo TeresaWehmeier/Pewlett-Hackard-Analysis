@@ -6,7 +6,11 @@ Pewlett-Hackard employees 240,124 staff in nine departments and seven different 
 2. Are there enough quailifed, retirement-ready employees in the departments to mentor the next generation of Pewlett-Hackard employees?
 
 ## Results
-Two major data components are necessary to perform the analysis. The first identifies all possible employees eligible for retirment within the next three yeas; the second looks for current employees who may be eligible for the mentorship program. 
+Two major data components are necessary to perform the analysis. The first identifies all possible employees eligible for retirment within the next three yeas; the second looks for current employees who may be eligible for the mentorship program. Initial results include:
+- 90,398 retirement eligible employees over the next three years
+- Initial mentorship results provide only 1,549 mentors
+- One of the retirement titles - managers - had no mentor selection in the initial mentorship query
+- There is a very low percentage of mentors (<2%) to mentor the positions opened up by those who will retire in the next three years
 
 ### Deliverable One
 The first database query used to determine the potential retirees looks for all current employees whose birthdays fall between January 1, 1952 and December 31, 1955. This initial file was exported as retirement_titles.csv; however, there is duplication in this file that must be addressed. The query is provided in the event there is a need for future refinement:
