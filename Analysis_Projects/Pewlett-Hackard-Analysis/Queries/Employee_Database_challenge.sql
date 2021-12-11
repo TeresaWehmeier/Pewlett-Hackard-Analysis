@@ -57,7 +57,10 @@ WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND t.to_date ='9999-01-01'
 ORDER BY e.emp_no, t.to_date DESC;
 
+
+
 -- OTHER QUERIES FOR ANALYSIS
+-- Double check current employee headcount by job title
 SELECT DISTINCT ON (e.emp_no) e.emp_no, t.title
 FROM employees as e
 INNER JOIN titles as t
@@ -65,7 +68,7 @@ ON e.emp_no = t.emp_no
 WHERE t.to_date = '9999-01-01'
 ORDER BY e.emp_no, t.to_date DESC;
 
--- How many current employees by department?
+-- How many current employees by department? 240,124 total employees
 SELECT COUNT(de.emp_no), d.dept_name
 FROM dept_emp as de
 INNER JOIN departments as d
@@ -73,18 +76,74 @@ ON de.dept_no = d.dept_no
 WHERE de.to_date = '9999-01-01'
 GROUP BY d.dept_name;
 
--- Find the ratio of retirees to potential mentors
-SELECT title, COUNT(emp_no) "Potential Mentors"
+-- Find the % of mentors to retirees
+DROP TABLE mentor_summary;
+
+SELECT title "mentor_title", COUNT(emp_no) "mentor_count"
+INTO mentor_summary
 FROM mentorship_eligibility
-GROUP BY title
-ORDER BY "Potential Mentors" DESC;
+GROUP BY "mentor_title"
+ORDER BY "mentor_count" DESC;
 
-SELECT * FROM retiring_titles;
+SELECT * FROM mentor_summary;
 
-SELECT COUNT(emp_no) FROM titles
-WHERE to_date = '9999-01-01';
+SELECT SUM(mentor_count) FROM mentor_summary;
 
-SELECT SUM(count) FROM retiring_titles;
+-- What is the percentage of mentors to train new candidates 
+SELECT rt.title "retiree_title", rt.count,
+		ms.mentor_count mentor_count, 
+		ROUND(CAST(mentor_count AS DEC) / CAST(rt.count AS DEC)*100,2) AS percent_mentors
+FROM retiring_titles AS rt
+LEFT JOIN mentor_summary AS ms
+ON rt.title = ms.mentor_title
+GROUP BY retiree_title, mentor_count, rt.count;
 
-SELECT * FROM departments;
+--Expand mentorship population out by increase birthdate range
+SELECT * FROM mentorship_eligibility_expanded;
+
+DROP TABLE mentorship_eligibility_expanded;
+
+SELECT DISTINCT ON (e.emp_no) e.emp_no, 
+	e.first_name, 
+	e.last_name, 
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	t.title
+INTO mentorship_eligibility_expanded
+FROM employees as e
+INNER JOIN dept_emp as de
+ON e.emp_no = de.emp_no
+INNER JOIN titles as t
+ON e.emp_no = t.emp_no
+WHERE (e.birth_date BETWEEN '1964-01-01' AND '1965-12-31')
+AND t.to_date ='9999-01-01'
+ORDER BY e.emp_no, t.to_date DESC;
+
+--See how many mentors by department if the pool is expanded.
+DROP TABLE mentor_summary_expanded;
+
+SELECT title mentor_title, COUNT(emp_no) mentor_count
+INTO mentor_summary_expanded
+FROM mentorship_eligibility_expanded
+GROUP BY mentor_title
+ORDER BY mentor_count DESC;
+
+select * from mentor_summary_expanded;
+
+
+-- compare number of mentors to number or replacement positions for retirees
+SELECT rt.title "Retiree Title", rt.count retirees,
+		mentor_count, 
+		ROUND(CAST(mentor_count AS DEC) / CAST(rt.count AS DEC)*100,2) AS percent_mentors
+FROM retiring_titles AS rt
+LEFT JOIN mentor_summary_expanded AS ms
+ON rt.title = mentor_title
+GROUP BY "Retiree Title", mentor_count, retirees;
+
+
+
+
+
+
 
