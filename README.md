@@ -6,11 +6,11 @@ Pewlett-Hackard employees 240,124 staff in nine departments and seven different 
 - What are the job titles of these potential retirees
 - Are there enough mentors available to train new employees for positions vacated by retirees
 
-## Method of Analysis
+## Results
 Two major data components are necessary to perform the analysis. The first identifies all possible employees eligible for retirment within the next three yeas; the second looks for current employees who may be eligible for the mentorship program. 
 
 ### Deliverable One
-The first database query used to determine the potential retirees looks for all current employees who's birthday's fall between January 1, 1952 and December 31, 1955. This initial file was exported as retirement_titles.csv; however, there is duplication in this file that must be addressed. The query is provided in the event there is a need for future refinement:
+The first database query used to determine the potential retirees looks for all current employees whose birthday's fall between January 1, 1952 and December 31, 1955. This initial file was exported as retirement_titles.csv; however, there is duplication in this file that must be addressed. The query is provided in the event there is a need for future refinement:
 
       ```
       SELECT e.emp_no, 
@@ -64,4 +64,5 @@ Next it is necessary to find those who are candidates for the mentorship program
       AND t.to_date ='9999-01-01'
       ORDER BY e.emp_no, t.to_date DESC;
       ```
+Using similar queries and processes to deliverable one, a mentorship list is defined, and summarized to show the distribution of mentors by job title. There are 1549 mentors returned in the query results; the resulting query is presented here:
 
