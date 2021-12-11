@@ -6,7 +6,7 @@ Pewlett-Hackard employees 240,124 staff in nine departments and seven different 
 2. Are there enough quailifed, retirement-ready employees in the departments to mentor the next generation of Pewlett-Hackard employees?
 
 ## Results
-Two major data components are necessary to perform the analysis. The first identifies all possible employees eligible for retirment within the next three yeas; the second looks for current employees who may be eligible for the mentorship program. Initial results include:
+Two major data components are necessary to perform the analysis. The first identifies all possible employees eligible for retirment within the next three years; the second looks for current employees who may be eligible for the mentorship program. Initial results include:
 - 90,398 retirement eligible employees over the next three years
 - Initial mentorship results provide only 1,549 mentors
 - One of the retirement titles - managers - had no mentor selection in the initial mentorship query
