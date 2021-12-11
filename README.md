@@ -1,7 +1,7 @@
 # Pewlett-Hackard Analysis: Planning for the Silver Tsunami
 
 ## Overview
-Pewlett-Hackard employees 240,124 staff in nine departments and seven different job titles. The company relizes that the "baby-boomer" generation represents a large portion of their workforce, and realizes that this population's retirement may have a significant impact on staffing in the next three to five years. The company has therefore asked for an analysis of the employee database to help answer two questions:
+Pewlett-Hackard employees 240,124 staff in nine departments and seven different job titles. The company realizes that the "baby-boomer" generation represents a large portion of their workforce, and realizes that this population's retirement may have a significant impact on staffing in the next three to five years. The company has therefore asked for an analysis of the employee database to help answer two questions:
 1. How many roles will need to be filled as the "silver tsunami" begins to make an impact?
 2. Are there enough quailifed, retirement-ready employees in the departments to mentor the next generation of Pewlett-Hackard employees?
 
