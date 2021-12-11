@@ -91,11 +91,9 @@ Other questions from the queries and data include:
 
 - Senior Engineers are the largest potential retiree pool with over 29,000 employees, or nearly 30% of the retirement elegible employees.
       - How difficult will it be to find qualified engineers to fill these senior level roles?
-
 - Senior Staff is the second largest potential retiree pool with over 28,000 employees, again representing nearly 30% of total retirement eligible employees
 - Nearly 70% of all possible retirees are in senior positions.
       - Should current retirement eligible staff be mentoring the "mentor staff" now to fill these senior level roles?
-
 - Nearly 50% of all possible retirees are "senior engineers" or "engineers".
       - How difficult will it be to find qualified engineers to fill these roles?
 
